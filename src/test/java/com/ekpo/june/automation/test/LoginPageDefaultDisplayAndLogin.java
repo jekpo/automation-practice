@@ -15,7 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
  * http://selenium-training.israelekpo.com/login.php
  * http://selenium-training.israelekpo.com/scenarios/0001.scenario
  * 
- * More scenariors are available here
+ * More scenarios are available here
  * http://selenium-training.israelekpo.com/scenarios.php
  * 
  * @author June Ekpo <jedewor@yahoo.com>
@@ -26,6 +26,7 @@ public class LoginPageDefaultDisplayAndLogin {
 	@Test
 	public void testLoginPageDefaultDisplay() {
 		
+		// This test verifies the default display of the login page
 		
 		String loginPageURL = "http://selenium-training.israelekpo.com/login.php";
 		
@@ -47,14 +48,17 @@ public class LoginPageDefaultDisplayAndLogin {
 		Assert.assertTrue(passwordFieldElement.isDisplayed());
 		Assert.assertTrue(submitButtonElement.isDisplayed());
 		
+		// close all open windows
 		driver.close();
 		
+		// Shutdown Webdriver
 		driver.quit();
 	}
 	
 	@Test
 	public void testLoginPageAuthenticate() {
 		
+		// This Test verifies that we are able to successfully login 
 		
 		String loginPageURL = "http://selenium-training.israelekpo.com/login.php";
 		String username = "john.doe";
@@ -83,13 +87,19 @@ public class LoginPageDefaultDisplayAndLogin {
 		// Click on the Sign In button
 		submitButtonElement.click();
 		
+		// Retrieve the current URL after we have logged in successfully
 		String actualUrl = driver.getCurrentUrl();
+		
+		// This is the expected URL we should land on
 		String expectedUrl = "http://selenium-training.israelekpo.com/control-panel.php";
 		
+		// Verifies that the user is navigated to the control panel and the login was successful
 		Assert.assertEquals(actualUrl, expectedUrl);
 		
+		// close all open windows
 		driver.close();
-		
+				
+		// Shutdown Webdriver
 		driver.quit();
 	}
 }
