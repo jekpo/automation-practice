@@ -30,28 +30,28 @@ public class LoginPageDefaultDisplayAndLogin {
 		
 		String loginPageURL = "http://selenium-training.israelekpo.com/login.php";
 		
-		// Create an instance of the WebDriver for the Firefox Browser
+		// 1. Create an instance of the WebDriver for the Firefox Browser
 		WebDriver driver = new FirefoxDriver();
 		
-		// Navigate to the login page
+		// 2. Navigate to the login page
 		driver.get(loginPageURL);
 		
-		// Use the web driver to find the elements by CSS Selectors
+		// 3. Use the web driver to find the elements by CSS Selectors
 		WebElement pageHeaderElement = driver.findElement(By.cssSelector("h2.pageTitle"));
 		WebElement usernameTextFieldElement = driver.findElement(By.cssSelector("#usernameContainer input"));
 		WebElement passwordFieldElement = driver.findElement(By.cssSelector("#passwordContainer input"));
 		WebElement submitButtonElement = driver.findElement(By.cssSelector("#submitButtonContainer input"));
 		
-		// Validate that the elements are present and visible on the page
+		// 4. Validate that the elements are present and visible on the page
 		Assert.assertTrue(pageHeaderElement.isDisplayed());
 		Assert.assertTrue(usernameTextFieldElement.isDisplayed());
 		Assert.assertTrue(passwordFieldElement.isDisplayed());
 		Assert.assertTrue(submitButtonElement.isDisplayed());
 		
-		// close all open windows
+		// 5. close all open windows
 		driver.close();
 		
-		// Shutdown Webdriver
+		// 6. Shutdown WebDriver
 		driver.quit();
 	}
 	
