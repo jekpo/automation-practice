@@ -10,5 +10,9 @@ public class ControlPanelPage extends Page {
 		super(driver);
 		this.setPageUrl(PAGE_URL);
 	}
+	
+	public boolean isCountryListOptionsVisible() {
+		return this.isElementVisible("a[href*=countries]");
+	}
 
 }

@@ -12,7 +12,7 @@ public class LoginPage extends Page {
 	}
 	
 	public boolean isPageTitleVisible() {
-		return this.elementIsDisplayed("h2.pageTitle");
+		return this.isElementVisible("h2.pageTitle");
 	}
 	
 	public void enterUsername(String username) {
@@ -20,11 +20,11 @@ public class LoginPage extends Page {
 	}
 	
 	public boolean isUserNameInputFieldVisible() {
-		return this.elementIsDisplayed("#usernameContainer input");
+		return this.isElementVisible("#usernameContainer input");
 	}
 	
 	public boolean isUsernameLabelVisible() {
-		return this.elementIsDisplayed("#usernameContainer label");
+		return this.isElementVisible("#usernameContainer label");
 	}
 	
 	public void enterPassword(String password) {
@@ -32,11 +32,11 @@ public class LoginPage extends Page {
 	}
 	
 	public boolean isPasswordInputFieldVisible() {
-		return this.elementIsDisplayed("#passwordContainer input");
+		return this.isElementVisible("#passwordContainer input");
 	}
 	
 	public boolean isPasswordLabelVisible() {
-		return this.elementIsDisplayed("#passwordContainer label");
+		return this.isElementVisible("#passwordContainer label");
 	}
 	
 	public void signIn() {
@@ -44,6 +44,6 @@ public class LoginPage extends Page {
 	}
 	
 	public boolean isSubmitButtonVisible() {
-		return this.elementIsDisplayed("#submitButtonContainer input");
+		return this.isElementVisible("#submitButtonContainer input");
 	}
 }

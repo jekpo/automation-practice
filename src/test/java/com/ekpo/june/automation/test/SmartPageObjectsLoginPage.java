@@ -64,6 +64,8 @@ public class SmartPageObjectsLoginPage {
 		// Assert that we are on the control panel page
 		Assert.assertTrue(controlPanelPage.isOnPage());
 		
+		Assert.assertTrue(controlPanelPage.isCountryListOptionsVisible());
+		
 		driver.close();
 		driver.quit();
 	}

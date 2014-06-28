@@ -86,7 +86,7 @@ public abstract class Page
       
     } catch (Throwable e) {
         
-        System.out.println("An error occurred while trying to retrieve element on page " + e);
+        System.out.println("\n\nAn error occurred while trying to retrieve element on page\n\n " + e);
     }
       
     return element;
@@ -98,7 +98,7 @@ public abstract class Page
    * @param cssLocator The selector to target the element
    * @return
    */
-  protected boolean elementIsDisplayed(final String cssLocator) {
+  protected boolean isElementVisible(final String cssLocator) {
     
     boolean isVisible = false;
     
