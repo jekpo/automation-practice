@@ -1,5 +1,8 @@
 package com.ekpo.june.automation.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,6 +10,15 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class WebDriverFactory {
+	
+	public static final List<String> validBrowsers = new ArrayList<String>();
+	
+	static {
+		WebDriverFactory.validBrowsers.add("firefox");
+		WebDriverFactory.validBrowsers.add("chrome");
+		WebDriverFactory.validBrowsers.add("ie");
+		WebDriverFactory.validBrowsers.add("safari");
+	}
 	
 	/**
 	 * Returns a WebDriver based on the browser name
@@ -26,6 +38,10 @@ public class WebDriverFactory {
 	public static WebDriver getDriverFromBrowserName(String browserName) {
 		
 		WebDriver driver = new FirefoxDriver();
+		
+		if (validBrowsers.contains(browserName)) {
+			throw new IllegalArgumentException("Browser name '" + browserName + "' is not an acceptable browser");
+		}
 		
 		if (browserName.equals("firefox")) {
 			
