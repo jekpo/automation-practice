@@ -10,4 +10,24 @@ public class TransportationOptionsPage extends Page {
 		super(driver);
 		this.setPageUrl(PAGE_URL);
 	}
+	
+	public boolean isPageHeaderVisible() {
+		return this.isElementVisible("#transportationModule h2");
+	}
+	
+	public boolean isPageMessageVisible() {
+		return this.isElementVisible("#transportationModule h3");
+	}
+	
+	public boolean isTravelByLandRadioOptionVisible() {
+		return this.isElementVisible("#transportOptionsForm input[type=radio][value=Land]");
+	}
+	
+	public boolean isTravelByLandRadioOptionSelected() {
+		return this.isSelected("#transportOptionsForm input[type=radio][value=Land]");
+	}
+	
+	public void selectTravelByLandRadioOption() {
+		this.click("#transportOptionsForm input[type=radio][value=Land]");
+	}
 }
