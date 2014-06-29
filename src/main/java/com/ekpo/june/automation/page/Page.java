@@ -192,4 +192,11 @@ public abstract class Page
   protected void sendKeys(final String cssLocator, final String keysToSend) {
 	  this.type(cssLocator, keysToSend);
   }
+  
+  protected String getFormInputValue(final String cssLocator) {
+	  
+	  WebElement element = retrieveElement(cssLocator);
+	    
+	  return element.getAttribute("value");
+  }
 }
