@@ -7,7 +7,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class LoginPageScenarios {
+import com.ekpo.june.automation.util.WebDriverFactory;
+
+public class LoginPageScenariosTest {
 
     @Test
     public void defaultDisplayTest() {
@@ -15,8 +17,12 @@ public class LoginPageScenarios {
         // Log In to the page
         String signInPage = "http://selenium-training.israelekpo.com/login.php";
 
+        // Capture the browser name from the System property called browser
+        // -Dbrowser=browserName
+        String browserName = System.getProperty("browser", "firefox");
+
         // creating instance of driver
-        WebDriver driver = new FirefoxDriver();
+        WebDriver driver = WebDriverFactory.getDriverFromBrowserName(browserName);
 
         // Navigate to the Sign In page
         driver.get(signInPage);
@@ -57,7 +63,12 @@ public class LoginPageScenarios {
         String username = "john.doe";
         String password = "12345";
 
-        WebDriver driver = new FirefoxDriver();
+     // Capture the browser name from the System property called browser
+        // -Dbrowser=browserName
+        String browserName = System.getProperty("browser", "firefox");
+
+        // creating instance of driver
+        WebDriver driver = WebDriverFactory.getDriverFromBrowserName(browserName);
 
         driver.get(signInPage);
 
@@ -88,10 +99,6 @@ public class LoginPageScenarios {
         driver.close();
 
         driver.quit();
-
-
-
-
 
     }
 }
